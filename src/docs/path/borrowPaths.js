@@ -47,3 +47,30 @@
  *       '500':
  *         description: Internal server error
  */
+
+/**
+ * @swagger
+ * /borrow/return/{id}:
+ *   put:
+ *     summary: Return a book
+ *     description: Update the reservation status of a book and send a message to RabbitMQ.
+ *     tags:
+ *       - Borrowings
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: The UUID of the borrow being returned
+ *         schema:
+ *           type: string
+ *           format: uuid
+ *     responses:
+ *       '200':
+ *         description: The book has been successfully returned.
+ *       '400':
+ *         description: Invalid input data.
+ *       '404':
+ *         description: Book not found.
+ *       '500':
+ *         description: Internal server error.
+ */
